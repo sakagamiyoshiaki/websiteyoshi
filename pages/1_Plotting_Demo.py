@@ -36,8 +36,8 @@ def plotting_demo():
     progress_bar = st.sidebar.progress(0)
     status_text = st.sidebar.empty()
     last_rows = np.random.randn(1, 1)
-    #chart = st.line_chart(last_rows)
-    chart = st.line_chart(2*df2['windspeedAvg']/3.6)
+    chart = st.line_chart(last_rows)
+    chart2 = st.line_chart(2*df2['windspeedAvg']/3.6)
 
 
 
