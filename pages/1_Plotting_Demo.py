@@ -32,8 +32,6 @@ df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
 
-import matplotlib.pyplot as plt
-
 arr = np.random.normal(1, 1, size=100)
 
 def plotting_demo():
