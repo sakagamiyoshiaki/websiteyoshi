@@ -38,9 +38,9 @@ df2=pd.json_normalize(df['metric'])
 
 #st.pyplot(fig) # instead of plt.show()
 
-fig, x = plt.subplots()
-x.hist(a, bins=10)
-st.pyplot(fig)
+#fig, x = plt.subplots()
+#x.hist(a, bins=10)
+#st.pyplot(fig)
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
