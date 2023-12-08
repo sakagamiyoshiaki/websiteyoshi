@@ -20,8 +20,6 @@ from streamlit.hello.utils import show_code
 import requests
 import pandas as pd
 
-#from matplotlib import pyplot as plt
-
 key='4c09891a71d24ce289891a71d29ce27f'
 
 station='IPALHO4'
@@ -33,14 +31,8 @@ reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+s
 df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
-#fig,ax = plt.figure(figsize=(8,8))
-#ax.plot(2*df2['windspeedAvg']/3.6)
+st.line_chart(2*df2['windspeedAvg']/3.6)
 
-#st.pyplot(fig) # instead of plt.show()
-
-#fig, x = plt.subplots()
-#x.hist(a, bins=10)
-#st.pyplot(fig)
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
