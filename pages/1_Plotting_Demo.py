@@ -20,7 +20,7 @@ from streamlit.hello.utils import show_code
 import requests
 import pandas as pd
 
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 key='4c09891a71d24ce289891a71d29ce27f'
 
@@ -38,6 +38,9 @@ df2=pd.json_normalize(df['metric'])
 
 #st.pyplot(fig) # instead of plt.show()
 
+fig, x = plt.subplots()
+x.hist(a, bins=10)
+st.pyplot(fig)
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
