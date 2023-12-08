@@ -37,13 +37,8 @@ def plotting_demo():
     status_text = st.sidebar.empty()
     last_rows = np.random.randn(1, 1)
     chart = st.line_chart(last_rows)
-    chart2=st.line_chart(2*df2['windspeedAvg']/3.6)
-    chart_data = pd.DataFrame(
-    {
-       "Tempo": np.random.randn(20),
-       "Velocidade do Vento": np.random.randn(20),
-       "Vel_knots": np.random.choice(["A", "B", "C"], 20),
-    }
+    chart2=st.line_chart(2*df2['windspeedAvg']/3.6,x='Tempo',y='velocidade')
+    
 )
 
 
