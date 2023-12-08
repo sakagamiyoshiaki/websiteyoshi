@@ -31,14 +31,6 @@ reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+s
 df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
-chart_data = pd.DataFrame(
-   {
-       "Tempo": np.random.randn(20),
-       "Velocidade do Vento": np.random.randn(20),
-       "Vel_knots": np.random.choice(["A", "B", "C"], 20),
-   }
-)
-
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
@@ -46,6 +38,13 @@ def plotting_demo():
     last_rows = np.random.randn(1, 1)
     chart = st.line_chart(last_rows)
     chart2=st.line_chart(2*df2['windspeedAvg']/3.6)
+    chart_data = pd.DataFrame(
+    {
+       "Tempo": np.random.randn(20),
+       "Velocidade do Vento": np.random.randn(20),
+       "Vel_knots": np.random.choice(["A", "B", "C"], 20),
+    }
+)
 
 
     for i in range(1, 101):
