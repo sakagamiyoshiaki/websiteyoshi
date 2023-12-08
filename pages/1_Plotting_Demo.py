@@ -27,6 +27,19 @@ key='4c09891a71d24ce289891a71d29ce27f'
 station='IPALHO4'
 data='20221005'
 
+reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+station+'&format=json&units=m&date='+data+'&apiKey='+key)
+
+#Converter em dataframe e salvar em csv
+df=pd.DataFrame(reqc.json()['observations']);
+df2=pd.json_normalize(df['metric'])
+
+
+fig = plt.figure(figsize=(8,8))
+plt.plot(2*df2['windspeedAvg']/3.6)
+
+st.pyplot(fig) # instead of plt.show()
+
+
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
     status_text = st.sidebar.empty()
