@@ -32,13 +32,12 @@ df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
 
-arr = np.random.normal(1, 1, size=100)
-
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
     status_text = st.sidebar.empty()
     last_rows = np.random.randn(1, 1)
-    chart = st.line_chart(last_rows)
+    #chart = st.line_chart(last_rows)
+    chart = st.line_chart(2*df2['windspeedAvg']/3.6)
 
 
 
