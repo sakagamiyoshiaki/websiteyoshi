@@ -33,10 +33,10 @@ reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+s
 df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
-fig,ax = plt.figure(figsize=(8,8))
-ax.plot(2*df2['windspeedAvg']/3.6)
+#fig,ax = plt.figure(figsize=(8,8))
+#ax.plot(2*df2['windspeedAvg']/3.6)
 
-st.pyplot(fig) # instead of plt.show()
+#st.pyplot(fig) # instead of plt.show()
 
 
 def plotting_demo():
