@@ -13,12 +13,19 @@
 # limitations under the License.
 
 import time
-
 import numpy as np
-
 import streamlit as st
 from streamlit.hello.utils import show_code
 
+import requests
+import pandas as pd
+
+from matplotlib import pyplot as plt
+
+key='4c09891a71d24ce289891a71d29ce27f'
+
+station='IPALHO4'
+data='20221005'
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
