@@ -45,9 +45,6 @@ def plotting_demo():
     ax.hist(arr, bins=20)
     st.pyplot(fig)
 
-    
-)
-
 
     for i in range(1, 101):
         new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
