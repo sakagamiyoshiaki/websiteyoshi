@@ -39,9 +39,7 @@ def plotting_demo():
     status_text = st.sidebar.empty()
     last_rows = np.random.randn(1, 1)
     chart = st.line_chart(last_rows)
-    fig, ax = plt.subplots()
-    ax.hist(arr, bins=20)
-    st.pyplot(fig)
+
 
 
     for i in range(1, 101):
