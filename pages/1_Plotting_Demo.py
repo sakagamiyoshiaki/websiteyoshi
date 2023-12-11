@@ -3,7 +3,7 @@ import time
 import numpy as np
 import streamlit as st
 from streamlit.hello.utils import show_code
-
+from matplotlib import pyplot as plt
 import requests
 import pandas as pd
 
