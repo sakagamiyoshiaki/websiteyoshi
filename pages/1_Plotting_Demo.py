@@ -18,12 +18,18 @@ reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+s
 df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
+
+
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
     status_text = st.sidebar.empty()
     last_rows = np.random.randn(1, 1)
     chart = st.line_chart(last_rows)
+    st.pyplot(fig)
     
     for i in range(1, 101):
         new_rows = last_rows[-1, :] + np.random.randn(5, 1).cumsum(axis=0)
