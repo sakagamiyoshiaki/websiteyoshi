@@ -18,11 +18,8 @@ reqc = requests.get('https://api.weather.com/v2/pws/history/hourly?stationId='+s
 df=pd.DataFrame(reqc.json()['observations']);
 df2=pd.json_normalize(df['metric'])
 
-arr = np.random.normal(1, 1, size=100)
 fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
-
-
+ax.plot(2*df2['windspeedAvg']/3.6)
 
 def plotting_demo():
     progress_bar = st.sidebar.progress(0)
