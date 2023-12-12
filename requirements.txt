@@ -5,5 +5,5 @@ pydeck
 streamlit
 matplotlib
 scikit-learn
-google-cloud-firestore
+google-cloud-firestore==0.28.0
 json
